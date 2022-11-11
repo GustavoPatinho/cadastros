@@ -1,14 +1,74 @@
 {
   "products": [
     {
-      "priceTo": 10,
-      "priceFrom": 20,
-      "inventory": 6,
-      "inventoryCut": 4,
-      "inventoryTotal": 10,
-      "name": "321",
-      "SKU": "213",
-      "id": "213"
+      "priceTo": 40,
+      "priceFrom": 60,
+      "inventory": 15,
+      "inventoryCut": 5,
+      "inventoryTotal": 20,
+      "name": "Brinco Masculino Prata",
+      "SKU": "BR200",
+      "id": "BR200"
+    },
+    {
+      "priceTo": 39.9,
+      "priceFrom": 48.9,
+      "inventory": 20,
+      "inventoryCut": 10,
+      "inventoryTotal": 30,
+      "name": "Anel Feminino Cravejado Zircônia",
+      "SKU": "AN200",
+      "id": "AN200"
+    },
+    {
+      "priceTo": 29.9,
+      "priceFrom": 39.9,
+      "inventory": 15,
+      "inventoryCut": 5,
+      "inventoryTotal": 20,
+      "name": "Colar Masculino Couro Trançado",
+      "SKU": "CO340",
+      "id": "CO340"
+    },
+    {
+      "priceTo": 59.9,
+      "priceFrom": 69,
+      "inventory": 12,
+      "inventoryCut": 8,
+      "inventoryTotal": 20,
+      "name": "Brinco Feminino Argola Banhado Ouro 18k",
+      "SKU": "BR295",
+      "id": "BR295"
+    },
+    {
+      "priceTo": 19.9,
+      "priceFrom": 29,
+      "inventory": 30,
+      "inventoryCut": 10,
+      "inventoryTotal": 40,
+      "name": "Pulseira Masculina Couro Trançado",
+      "SKU": "PU290",
+      "id": "PU290"
+    },
+    {
+      "priceTo": 69.9,
+      "priceFrom": 89.9,
+      "inventory": 9,
+      "inventoryCut": 6,
+      "inventoryTotal": 15,
+      "name": "Colar Feminino Pérola",
+      "SKU": "CO485",
+      "id": "CO485"
+    },
+    {
+      "priceTo": 49.9,
+      "priceFrom": 69,
+      "inventory": 50,
+      "inventoryCut": 10,
+      "inventoryTotal": 60,
+      "name": "Anel Feminino Prata Zircônia",
+      "SKU": "AN220",
+      "id": "AN220"
     }
   ]
 }
