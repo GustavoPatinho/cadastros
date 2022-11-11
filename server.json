@@ -3,12 +3,12 @@
     {
       "priceTo": 10,
       "priceFrom": 20,
-      "inventory": 5,
-      "inventoryCut": 5,
+      "inventory": 6,
+      "inventoryCut": 4,
       "inventoryTotal": 10,
-      "name": "bbbvvcc",
-      "SKU": "aaa",
-      "id": "aaa"
+      "name": "321",
+      "SKU": "213",
+      "id": "213"
     }
   ]
 }

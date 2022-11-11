@@ -4,7 +4,16 @@ import { createTheme } from "@mui/material/styles";
 import MaterialReactTable, { MRT_ColumnDef } from "material-react-table";
 import api from "../../services/api";
 import { Button, Container } from "./styles";
-import { Box, IconButton, Tooltip } from "@mui/material";
+import {
+  Box,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  IconButton,
+  Tooltip,
+} from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import SearchOffIcon from "@mui/icons-material/SearchOff";
@@ -33,11 +42,22 @@ const theme = createTheme({
 
 const Table: FC = () => {
   const [products, setProducts] = useState([]);
+  const [skuToDelete, setSkuToDelete] = useState<string | null>(null);
   const getProducts = () => {
     api.get("products").then(({ data }) => {
       setProducts(data);
     });
   };
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpenDialog = () => {
+    setOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     getProducts();
 
@@ -73,8 +93,9 @@ const Table: FC = () => {
     []
   );
 
-  const handleDelete = (sku: string) => {
-    api.delete(`products/${sku}`).then((response) => {
+  const handleDelete = () => {
+    handleCloseDialog();
+    api.delete(`products/${skuToDelete}`).then((response) => {
       getProducts();
     });
   };
@@ -122,7 +143,8 @@ const Table: FC = () => {
                 color="error"
                 onClick={() => {
                   const sku = row.getValue("SKU");
-                  handleDelete(sku as string);
+                  setSkuToDelete(sku as string);
+                  handleOpenDialog();
                 }}
               >
                 <Delete />
@@ -131,6 +153,30 @@ const Table: FC = () => {
           </Box>
         )}
       />
+      <Dialog
+        open={open}
+        onClose={handleCloseDialog}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Excluir Produto</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            {`Tem certeza que deseja excluir?`}
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog}>Cancelar</Button>
+          <Button
+            onClick={() => {
+              handleDelete();
+            }}
+            autoFocus
+          >
+            Excluir
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 };
