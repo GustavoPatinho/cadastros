@@ -130,6 +130,8 @@ const Form = ({ mode }: IFormProps) => {
         <Label>Preço inicial: </Label>
         <Input
           type="number"
+          pattern="[0-9]+([,\.][0-9]+)?"
+          step="any"
           {...register("priceFrom")}
           placeholder="Preço inicial"
         />
@@ -138,6 +140,8 @@ const Form = ({ mode }: IFormProps) => {
         <Label>Preço promocional: </Label>
         <Input
           type="number"
+          pattern="[0-9]+([,\.][0-9]+)?"
+          step="any"
           {...register("priceTo")}
           placeholder="Preço promocional"
         />
