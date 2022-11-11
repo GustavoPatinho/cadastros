@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "priceTo": 10,
+      "priceFrom": 20,
+      "inventory": 5,
+      "inventoryCut": 5,
+      "inventoryTotal": 10,
+      "name": "bbbvvcc",
+      "SKU": "aaa",
+      "id": "aaa"
+    }
+  ]
+}
